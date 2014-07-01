@@ -1,0 +1,11 @@
+SELECT * FROM auction WHERE id in (SELECT DISTINCT auction_id FROM bid WHERE user_id = $id)
+
+SELECT * FROM auction a, bid b WHERE a.id=$id AND b.auction_id=a.id ORDER by bid_date DESC LIMIT 1;
+
+
+INSERT INTO `users` (`first_name`, `last_name`, `obf_email`, `email`, `password`, `contact_number`, `image`, `reputation`, `salt`, `type`, `id`) VALUES
+('Justin', 'Alonzo', 'justin@obf.ateneo.edu', 'alonzo@eagleexchange.com', '4c104877dc82b71b2d66782f1d0715e783194a80a55b488a83d2b821e228792e', '0', NULL, 0, '24f0deba249017cc', 'NORMAL', 100149),
+('Karlo', 'Amparo', 'karlo@obf.ateneo.edu', 'amparo@eagleexchange.com', 'f9c3bdce9db569cd5ee4107fdaa7a6904c0fc31ac1562db40d84dd428e8ced19', '0', NULL, 0, '2225c61c1b5d3f19', 'NORMAL', 100175),
+('Paul', 'Cabrera', 'paul@obf.ateneo.edu', 'cabrera@eagleexchange.com', '35d0eab8d105be07c6208081b71715ae269ff56b852584eccae7cd0e545d64b7', '0', NULL, 0, '1c7eadce2f5eb42d', 'NORMAL', 100624),
+('Alliya', 'Cucueco', 'alliya@obf.ateneo.edu', 'cucueco@eagleexchange.com', 'b08c6d286b6cca265def25144ffd5a6a4b5d7c5376214a5555afdaebb4f80492', '0', NULL, 0, '445d98f9b09e328', 'NORMAL', 101058);
+
